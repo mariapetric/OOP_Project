@@ -9,11 +9,11 @@ class Vehicul {
 public:
     enum class Directie {Sus, Jos, Stanga, Dreapta};
 private:
-    int id;
+    int id = 0;
     string tip;
-    double viteza;
+    double viteza = 0.0;
     pair <int, int> pozitie;
-    Directie directie;
+    Directie directie = Directie::Sus;
 
 public:
     //constructor de initializare fara param
@@ -105,8 +105,8 @@ class Semafor {
 public:
     enum class Culoare { Rosu, Galben, Verde };
 private:
-    Culoare culoare;
-    int durataVerde, durataGalben, durataRosu, timpCurent;
+    Culoare culoare = Culoare::Verde;
+    int durataVerde = 0, durataGalben = 0, durataRosu = 0, timpCurent = 0;
 
 public:
     //constructor fara param
@@ -207,8 +207,8 @@ bool Semafor::EsteVerde () const {
 class Strada { //are compunere
 private:
     string nume;
-    int lungime;
-    Vehicul::Directie directie;
+    int lungime = 0;
+    Vehicul::Directie directie = Vehicul::Directie::Sus;
     pair <int, int> coordonataStart;
 
     vector <Vehicul> vehicule;
@@ -496,6 +496,8 @@ int main() {
     Semafor s1(Semafor::Culoare::Rosu, 10, 3, 7, 0);
     s1.TrecereTimp(8);
     cout << "Semaforul este rosu? " << (s1.EsteRosu() ? "Da" : "Nu") << endl;
+    cout << "Semaforul este galben? " << (s1.EsteGalben() ? "Da" : "Nu") << endl;
+    cout << "Semaforul este verde? " << (s1.EsteVerde() ? "Da" : "Nu") << endl;
     cout << s1 << endl;
 
     //Cream o stradă
