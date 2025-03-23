@@ -45,6 +45,7 @@ public:
             case Directie::Jos: return "Jos";
             case Directie::Stanga: return "Stanga";
             case Directie::Dreapta: return "Dreapta";
+            default: return "Necunoscut";
         }
     }
 
@@ -137,6 +138,7 @@ public:
             case Culoare::Rosu: return "Rosu";
             case Culoare::Galben: return "Galben";
             case Culoare::Verde: return "Verde";
+            default: return "Necunoscut";
         }
     }
 
@@ -246,6 +248,7 @@ public:
             case Vehicul::Directie::Jos: return "Jos";
             case Vehicul::Directie::Stanga: return "Stanga";
             case Vehicul::Directie::Dreapta: return "Dreapta";
+            default: return "Necunoscut";
         }
     }
 
@@ -336,7 +339,7 @@ void Strada::AdaugaVehicul (const Vehicul& v, bool sens) {
 
 // Functie pentru sincronizare semafor nou adaugat
 void Strada::SincronizareSemafor(int index) {
-    if (!semafoare.empty() && index > 0 && index < semafoare.size()) {
+    if (!semafoare.empty() && index > 0 && index < (int)semafoare.size()) {
         semafoare[index].first = semafoare[0].first;
     }
 }
