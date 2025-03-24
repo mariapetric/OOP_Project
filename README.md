@@ -1,4 +1,7 @@
-# Nu primesc notă pentru că nu am pus titlu și descriere
+# TraffiX
+
+## Descriere
+### Simulator de trafic urban
 
 ### Folosiți template-ul corespunzător grupei voastre!
 

@@ -39,6 +39,7 @@ public:
     //destructor
     ~Vehicul() = default;
 
+private:
     string directieToString() const {
         switch(directie) {
             case Directie::Sus: return "Sus";
@@ -49,6 +50,7 @@ public:
         }
     }
 
+public:
     //incarcare de operator
     friend ostream& operator<<(ostream& os, const Vehicul& obj) {
         os << "[ Vehicul ID: " << obj.id
@@ -133,6 +135,7 @@ public:
     //destructor
     ~Semafor() = default;
 
+private:
     string culoareToString() const {
         switch (culoare) {
             case Culoare::Rosu: return "Rosu";
@@ -142,6 +145,7 @@ public:
         }
     }
 
+public:
     //incarcare de operator
     friend ostream& operator<<(ostream& os, const Semafor& obj) {
         os << "[ Semafor culoare: " << obj.culoareToString()
@@ -242,6 +246,7 @@ public:
     //destructor
     ~Strada() = default;
 
+private:
     string directieToString() const {
         switch(directie) {
             case Vehicul::Directie::Sus: return "Sus";
@@ -252,6 +257,7 @@ public:
         }
     }
 
+public:
     //incarcare de operator
     friend ostream& operator<<(ostream& os, const Strada& obj) {
         os << "[ Strada nume: " << obj.nume
@@ -282,9 +288,10 @@ public:
 
     void AdaugaVehicul (const Vehicul& v, bool sens = true);
     void AdaugaSemafor (const Semafor& s, int distanta);
-    void SincronizareSemafor (int index);
     void EliminaSemaforLaDistanta (int distanta);
 
+private:
+    void SincronizareSemafor (int index);
 };
 
 pair<int, int> Strada::GetCoordonataStart() const {
